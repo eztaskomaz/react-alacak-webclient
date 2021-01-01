@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,11 +24,36 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/yte-react-assets/css/app-loader.css">
+    <link rel="stylesheet" href="/yte-react-assets/css/loaders.0.1.2/loaders.min.css">
+    <link rel="stylesheet" href="/yte-react-assets/css/react-datepicker-3.3.0/react-datepicker.min.css">
+    <link rel="stylesheet" href="/yte-react-assets/css/react-toastify-6.1.0/ReactToastify.min.css">
+    <link rel="stylesheet" href="/yte-react-assets/fontawesome-free-5.15.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/yte-react-assets/css/yte-react-styles-4.0.0.min.css">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+
+    <div id="root">
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <script defer id="yte-react-assets-autonumeric-script" src="/yte-react-assets/js/autonumeric-4.6.0/autoNumeric.min.js"></script>
+    <script defer id="yte-react-assets-pdfmake-script" src="/yte-react-assets/js/pdfmake.min.js"></script>
+    <script defer id="yte-react-assets-vfs-fonts-script" src="/yte-react-assets/js/vfs_fonts.js"></script>
+    <script defer id="yte-react-assets-cities-script" src="/yte-react-assets/js/cities.min.js"></script>
+    <script defer id="yte-react-assets-blob-script" src="/yte-react-assets/js/Blob.min.js"></script>
+    <script defer id="yte-react-assets-file-saver-script" src="/yte-react-assets/js/FileSaver-1.3.3.min.js"></script>
+    <script defer id="yte-react-assets-jszip-script" src="/yte-react-assets/js/jszip-0.10.8.min.js"></script>
+    <script defer id="yte-react-assets-xlsx-script" src="/yte-react-assets/js/xlsx.core.min.js"></script>
+    <script defer id="yte-react-assets-fontawesome-script" src="/yte-react-assets/fontawesome-free-5.15.1-web/js/all.min.js"></script>
+    <script id="yte-react-assets-jquery-script" src="/yte-react-assets/js/jquery-3.5.1/jquery.min.js"></script>
+    <script id="yte-react-assets-jquery-mask-plugin-script" src="/yte-react-assets/js/jquery-mask-plugin-1.14.16/jquery.mask.min.js"></script>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
