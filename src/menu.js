@@ -1,5 +1,11 @@
 const tanimlamaIslemleri = [
-    {label: 'menu.TahakkukTuru', title: "menu.TahakkukTuru", iconParams: {icon: ["fas", "home"]}, to :'/tahakkuk-turu'},
+    {label: 'menu.faiz-tipi-islemleri', title: "menu.faiz-tipi-islemleri", iconParams: {icon: ["fas", "home"]}, to :'/faiz-tipi'},
+    {label: 'menu.tahakkuk-turu-islemleri', title: "menu.tahakkuk-turu-islemleri", iconParams: {icon: ["fas", "home"]}, to :'/tahakkuk-turu'},
+    {label: 'menu.kalem-turu-islemleri', title: "menu.kalem-turu-islemleri", iconParams: {icon: ["fas", "home"]}, to :'/kalem-turu'},
+    {label: 'menu.alacak-kategorisi-islemleri', title: "menu.alacak-kategorisi-islemleri", iconParams: {icon: ["fas", "home"]}, to :'/alacak-kategorisi'},
+    {label: 'menu.etiket-islemleri', title: "menu.etiket-islemleri", iconParams: {icon: ["fas", "home"]}, to :'/etiket'},
+    {label: 'menu.resmi-tatil-islemleri', title: "menu.resmi-tatil-islemleri", iconParams: {icon: ["fas", "home"]}, to :'/resmi-tatil'},
+    {label: 'menu.kurum-hesap-plani-islemleri', title: "menu.kurum-hesap-plani-islemleri", iconParams: {icon: ["fas", "home"]}, to :'/kurum-hesap-plani'},
 ];
 
 const menu = [
