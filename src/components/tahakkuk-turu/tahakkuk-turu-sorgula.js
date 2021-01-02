@@ -9,7 +9,9 @@ import {
     historyPush,
     getModuleRoute,
     getStoreValue,
-    YteEnumInput
+    YteEnumInput,
+    enumDisplay,
+    formatBoolean
 } from "yte-react-core";
 import {Component} from 'react';
 
@@ -58,22 +60,22 @@ class TahakkukTuruSorgula extends Component {
     queryUrl = "/tahakkukTuru/sorgula"
 
     render() {
-
         return <YteCriteriaAndQueryPanel
             queryUrl={this.queryUrl}
             deleteUrl="/tahakkukTuru/pasiflestir"
             criteriaPanelComponent={this.criteriaPanelComponent}
             dataTableProps={{onRowClick: this.rowClick}}>
 
-            <YteColumn field="ad" header="tahakkuk-turu.id"/>
-            <YteColumn field="alacakKategorisi" header="tahakkuk-turu.alacakKategorisiId"/>
+            <YteColumn field="id" header="tahakkuk-turu.id"/>
+            <YteColumn field="ad" header="tahakkuk-turu.ad"/>
+            <YteColumn field="alacakKategorisiId" header="tahakkuk-turu.alacakKategorisiId"/>
             <YteColumn field="aciklama" header="tahakkuk-turu.aciklama"/>
-            <YteColumn field="durum" header="tahakkuk-turu.durum"/>
-            <YteColumn field="olusturulacakTahakkukTipi" header="tahakkuk-turu.olusturulacakTahakkukTipi"/>
-            <YteColumn field="kismenKapatilabilirMi" header="tahakkuk-turu.kismenKapatilabilirMi"/>
-            <YteColumn field="kismenTaksitKapatilabilirMi" header="tahakkuk-turu.kismenTaksitKapatilabilirMi"/>
-            <YteColumn field="sayistayIlamiTuruMu" header="tahakkuk-turu.sayistayIlamiTuruMu"/>
-            <YteColumn field="pesinatliMi" header="tahakkuk-turu.pesinatliMi"/>
+            <YteColumn header="tahakkuk-turu.durum" body={(rowData) => (enumDisplay("Durum", rowData.durum))} />
+            <YteColumn header="tahakkuk-turu.olusturulacakTahakkukTipi" body={(rowData) => (enumDisplay("OlusturulacakTahakkukTipi", rowData.olusturulacakTahakkukTipi))} />
+            <YteColumn header="tahakkuk-turu.kismenKapatilabilirMi" body={(rowData) => (formatBoolean(rowData.kismenKapatilabilirMi))}/>
+            <YteColumn header="tahakkuk-turu.kismenTaksitKapatilabilirMi" body={(rowData) => (formatBoolean(rowData.kismenTaksitKapatilabilirMi))}/>
+            <YteColumn header="tahakkuk-turu.sayistayIlamiTuruMu" body={(rowData) => (formatBoolean(rowData.sayistayIlamiTuruMu))}/>
+            <YteColumn header="tahakkuk-turu.pesinatliMi" body={(rowData) => (formatBoolean(rowData.pesinatliMi))}/>
         </YteCriteriaAndQueryPanel>
     }
 
