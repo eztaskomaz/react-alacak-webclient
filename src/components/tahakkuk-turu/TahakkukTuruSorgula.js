@@ -13,9 +13,12 @@ import {
     YteRangeInput,
     YteTextInput,
     YteButton,
+    showPopupModal,
+    showNotification,
     T
 } from "yte-react-core";
 import {Component} from 'react';
+import TahakkukTuruTasi from "./TahakkukTuruTasi";
 
 class TahakkukTuruSorgula extends Component {
 
@@ -97,8 +100,14 @@ class TahakkukTuruSorgula extends Component {
         historyPush(this.props, getModuleRoute(this.props) + "/" + moduleRouteViewPageUrl + "?id=" + (row.data.id), true);
     };
 
-    handleClickQueryPageOptions = () => {
-        historyPush(this.props, getModuleRoute(this.props) + "/tasi", true);
+    handleShowPopupModal = () => {
+        showPopupModal({
+            header: <T>{"tahakkuk-turu.tasi.baslik"}</T>,
+            body: <TahakkukTuruTasi/>,
+            closeContent: <T>{"tahakkuk-turu.tasi.kapatButonu"}</T>,
+            submitContent: <T>{"tahakkuk-turu.tasi.tasiButonu"}</T>,
+            submitAction:() => {showNotification({notificationType: 'success', title: 'Başarılı', detail: 'Tahakkuk türü taşıma işlemi başarıyla tamamlandı.'})}
+        });
     };
 
     render() {
@@ -109,7 +118,7 @@ class TahakkukTuruSorgula extends Component {
             dataTableProps={{onRowClick: this.rowClick}}
             queryPanelAfterButtons={() => {
                 return <span key="AfterFirstButton">
-                        <YteButton styleType={"Primary"} onClick={() => {this.handleClickQueryPageOptions()}}><T>{"tahakkuk-turu.tasi"}</T></YteButton>
+                        <YteButton styleType={"Primary"} onClick={() => {this.handleShowPopupModal()}}><T>{"tahakkuk-turu.tasi"}</T></YteButton>
                     </span>
             }}>
             <YteColumn field="id" header="tahakkuk-turu.id"/>
