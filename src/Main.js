@@ -25,7 +25,7 @@ class Main extends Component {
             logoWidth={50}
             logoHeight={50}
             enums={enums}
-            remotingBaseUrl="/backend-proxy-api">
+            remotingBaseUrl="/alacakislemleri">
 
         </YteBaseApp>
     }

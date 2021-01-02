@@ -102,12 +102,12 @@ module.exports = function (proxy, allowedHost) {
     public: allowedHost,
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
     proxy: {
-      'backend-proxy-api': {
-        target: 'http://localhost:8084',
+      '/alacakislemleri': {
+        target: 'http://localhost:8084/',
         secure: false,
         changeOrigin: true,
         pathRewrite: {
-          'backend-proxy-api': ''
+          '/alacakislemleri': ''
         }
       }
     },
