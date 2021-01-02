@@ -10,12 +10,17 @@ const routes = [
     {path: "/tahakkuk", component: Tahakkuk},
     {
         path: "/tahakkuk-turu",
-        moduleRoute: true,
+        moduleRoute:true,
         queryComponent: TahakkukTuruSorgula,
         addComponent: TahakkukTuruEkle,
         viewComponent: TahakkukTuruGoruntule,
         updateComponent: TahakkukTuruGuncelle
-    }
+    },
+    // { path:"/tanimlama-islemleri/tahakkuk-turu", exact:true, component: TahakkukTuruSorgula},
+    // { path:"/tanimlama-islemleri/tahakkuk-turu/sorgula", exact:true, component: TahakkukTuruSorgula},
+    // { path:"/tanimlama-islemleri/tahakkuk-turu/ekle", exact:true, component: TahakkukTuruEkle},
+    // { path:"/tanimlama-islemleri/tahakkuk-turu/guncelle/:dto_id", exact:true, component: TahakkukTuruGuncelle},
+    // { path:"/tanimlama-islemleri/tahakkuk-turu/goruntule/:dto_id", exact:true, component: TahakkukTuruGoruntule}
 
 ]
 

@@ -26,7 +26,8 @@ const tr = {
         "tahakkuk-turu.alacakKategorisiId": "Alacak Kategorisi No",
         "tahakkuk-turu.sayistayIlamiTuruMu": "Sayıştay İlamı Türü",
         "tahakkuk-turu.etahsilatYapilabilirMi": "E-Tahsilat Yapılabilir Mi",
-        "tahakkuk-turu.olusturulacakTahakkukTipi": "Oluşturulacak Tahakkuk Tipi"
+        "tahakkuk-turu.olusturulacakTahakkukTipi": "Oluşturulacak Tahakkuk Tipi",
+        "menu.tanimlama-islemleri": "Tanımlama İşlemleri"
     }
 }
 
