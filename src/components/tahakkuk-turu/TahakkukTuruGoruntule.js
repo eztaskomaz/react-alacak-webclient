@@ -11,8 +11,6 @@ import {Component} from 'react';
 class TahakkukTuruGoruntule extends Component {
 
     render() {
-
-
         return <YteViewComponent location={this.props.location} history={this.props.history}
                                  getItemParams={this.props.getItemParams} target={this} getUrl={"/tahakkukTuru/get"}>
             <YteForm>

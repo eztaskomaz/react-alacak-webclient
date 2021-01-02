@@ -1,9 +1,10 @@
 import AnaSayfa from './components/AnaSayfa';
 import Tahakkuk from './components/Tahakkuk';
-import TahakkukTuruEkle from "./components/tahakkuk-turu/tahakkuk-turu-ekle";
-import TahakkukTuruGuncelle from "./components/tahakkuk-turu/tahakkuk-turu-guncelle";
-import TahakkukTuruGoruntule from "./components/tahakkuk-turu/tahakkuk-turu-goruntule";
-import TahakkukTuruSorgula from "./components/tahakkuk-turu/tahakkuk-turu-sorgula";
+import TahakkukTuruEkle from "./components/tahakkuk-turu/TahakkukTuruEkle";
+import TahakkukTuruGuncelle from "./components/tahakkuk-turu/TahakkukTuruGuncelle";
+import TahakkukTuruGoruntule from "./components/tahakkuk-turu/TahakkukTuruGoruntule";
+import TahakkukTuruSorgula from "./components/tahakkuk-turu/TahakkukTuruSorgula";
+import TahakkukTuruTasi from "./components/tahakkuk-turu/TahakkukTuruTasi";
 
 const routes = [
     {path: "/", component: AnaSayfa},
@@ -21,6 +22,7 @@ const routes = [
         viewComponent: TahakkukTuruGoruntule,
         updateComponent: TahakkukTuruGuncelle
     },
+    {path: "/tahakkuk-turu/tasi", component: TahakkukTuruTasi},
     {
         path: "/kalem-turu",
         moduleRoute:true,

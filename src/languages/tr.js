@@ -22,6 +22,8 @@ const tr = {
         "enum.OlusturulacakTahakkukTipi.STANDART": "Standart",
         "enum.OlusturulacakTahakkukTipi.AVANS": "Avans",
         "enum.OlusturulacakTahakkukTipi.ODENEK_IADE": "Ödenek İade",
+        "tahakkuk-turu.tasi": "Taşı",
+        "tahakkuk-turu.tasi.tahakkukTuru": "Kalem Türleri Taşınacak Tahakkuk Türü",
         "tahakkuk-turu.id": "Tahakkuk Türü No",
         "tahakkuk-turu.ad": "Ad",
         "tahakkuk-turu.durum": "Durum",
