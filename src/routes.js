@@ -10,6 +10,7 @@ import KalemTuruGoruntule from "./components/kalem-turu/KalemTuruGoruntule";
 import KalemTuruGuncelle from "./components/kalem-turu/KalemTuruGuncelle";
 import KalemTuruEkle from "./components/kalem-turu/KalemTuruEkle";
 import AlacakKategorisiGuncelle from "./components/alacak-kategorisi/AlacakKategorisiGuncelle";
+import FaizTipiGuncelle from "./components/faiz-tipi/FaizTipiGuncelle";
 
 const routes = [
     {path: "/", component: AnaSayfa},
@@ -17,7 +18,7 @@ const routes = [
     {
         path: "/faiz-tipi",
         moduleRoute:true,
-        queryComponent: TahakkukTuruSorgula
+        queryComponent: FaizTipiGuncelle
     },
     {
         path: "/tahakkuk-turu",

@@ -32,6 +32,14 @@ const tr = {
         "enum.EmanetDurumu.EMANETE_ALINIR": "Emanete Alınır",
         "enum.EmanetDurumu.EMANETE_ALINMAZ": "Emanete Alınmaz",
 
+        "alacak-kategorisi.baslik" : "Alacak Kategorisi",
+        "alacak-kategorisi.ekle" : "Ekle",
+        "alacak-kategorisi.sil" : "Sil",
+        "alacak-kategorisi.ad": "Ad",
+        "alacak-kategorisi.aciklama": "Açıklama",
+        "alacak-kategorisi.tahakkukSonradanEklenebilir": "Tahakkuk Sonradan Eklenebilir",
+        "alacak-kategorisi.tahakkukIptalEdilebilir": "Tahakkuk İptal Edilebilir",
+
         "tahakkuk-turu.tasi": "Taşı",
         "tahakkuk-turu.tasi.kapatButonu": "Kapat",
         "tahakkuk-turu.tasi.tasiButonu": "Taşı",
