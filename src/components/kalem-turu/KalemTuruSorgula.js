@@ -16,7 +16,7 @@ import {
 } from "yte-react-core";
 import {Component} from 'react';
 
-class TahakkukTuruSorgula extends Component {
+class KalemTuruSorgula extends Component {
 
     state = {
         alacakKategorisiOptions: [],
@@ -254,4 +254,4 @@ class TahakkukTuruSorgula extends Component {
 
 }
 
-export default TahakkukTuruSorgula;
+export default KalemTuruSorgula;

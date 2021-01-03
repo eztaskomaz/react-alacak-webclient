@@ -8,32 +8,7 @@ import {
     YteValidator
 } from "yte-react-core";
 
-class TahakkukTuruGuncelle extends Component {
-
-    state = {
-        alacakKategorisiOptions: []
-    }
-
-    validations = {
-        "state.item.ad": {presence: true, length: {le: 256, ge: 1}},
-        "state.item.aciklama": {presence: true, length: {le: 1024, mgein: 1}},
-        "state.item.oncelik": {presence: true, number: {onlyInteger: true, ge: 0, le: 2147483647}},
-        "state.item.maxTaksitYili": {number: {onlyInteger: true, ge: 0, le: 32767, allowBlank: true}},
-        "state.item.alacakKategorisiId": {presence: true},
-        "state.item.gelirIdaresineBildirmeSuresi": {number: {onlyInteger: true, ge: 0, le: 32767, allowBlank: true}},
-        "state.item.olusturulacakTahakkukTipi": {presence: true}
-    }
-
-    componentDidMount() {
-        handleRemoteCall({
-            method: "get",
-            targetUrl: "/tahakkukTuru/getAlacakKategorisiList",
-            afterOperationSucceeded: (data) => {
-                console.log(data);
-                this.setState({alacakKategorisiOptions: data});
-            }
-        });
-    }
+class AlacakKategorisiGuncelle extends Component {
 
     render() {
         return <YteValidator target={this}>
@@ -89,4 +64,4 @@ class TahakkukTuruGuncelle extends Component {
     }
 }
 
-export default TahakkukTuruGuncelle;
+export default AlacakKategorisiGuncelle;

@@ -6,6 +6,10 @@ import TahakkukTuruGoruntule from "./components/tahakkuk-turu/TahakkukTuruGorunt
 import TahakkukTuruSorgula from "./components/tahakkuk-turu/TahakkukTuruSorgula";
 import TahakkukTuruTasi from "./components/tahakkuk-turu/TahakkukTuruTasi";
 import KalemTuruSorgula from "./components/kalem-turu/KalemTuruSorgula";
+import KalemTuruGoruntule from "./components/kalem-turu/KalemTuruGoruntule";
+import KalemTuruGuncelle from "./components/kalem-turu/KalemTuruGuncelle";
+import KalemTuruEkle from "./components/kalem-turu/KalemTuruEkle";
+import AlacakKategorisiGuncelle from "./components/alacak-kategorisi/AlacakKategorisiGuncelle";
 
 const routes = [
     {path: "/", component: AnaSayfa},
@@ -28,14 +32,14 @@ const routes = [
         path: "/kalem-turu",
         moduleRoute:true,
         queryComponent: KalemTuruSorgula,
-        addComponent: TahakkukTuruEkle,
-        viewComponent: TahakkukTuruGoruntule,
-        updateComponent: TahakkukTuruGuncelle
+        addComponent: KalemTuruEkle,
+        viewComponent: KalemTuruGoruntule,
+        updateComponent: KalemTuruGuncelle
     },
     {
         path: "/alacak-kategorisi",
         moduleRoute:true,
-        queryComponent: TahakkukTuruSorgula
+        queryComponent: AlacakKategorisiGuncelle
     },
     {
         path: "/resmi-tatil",
