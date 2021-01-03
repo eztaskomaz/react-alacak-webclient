@@ -5,6 +5,7 @@ import TahakkukTuruGuncelle from "./components/tahakkuk-turu/TahakkukTuruGuncell
 import TahakkukTuruGoruntule from "./components/tahakkuk-turu/TahakkukTuruGoruntule";
 import TahakkukTuruSorgula from "./components/tahakkuk-turu/TahakkukTuruSorgula";
 import TahakkukTuruTasi from "./components/tahakkuk-turu/TahakkukTuruTasi";
+import KalemTuruSorgula from "./components/kalem-turu/KalemTuruSorgula";
 
 const routes = [
     {path: "/", component: AnaSayfa},
@@ -26,7 +27,7 @@ const routes = [
     {
         path: "/kalem-turu",
         moduleRoute:true,
-        queryComponent: TahakkukTuruSorgula,
+        queryComponent: KalemTuruSorgula,
         addComponent: TahakkukTuruEkle,
         viewComponent: TahakkukTuruGoruntule,
         updateComponent: TahakkukTuruGuncelle
