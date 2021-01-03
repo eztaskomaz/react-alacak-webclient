@@ -69,16 +69,35 @@ class AlacakKategorisiGuncelle extends Component {
         });
     }
 
+    ekleButtonClicked () {
+        const selections = [...this.state.data];
+        selections.push({});
+        this.setState({data: selections});
+    }
+
+    silButtonClicked () {
+        const selection = {...this.state.currentSelections[0]}
+        const selections = [...this.state.data];
+        const filteredSelections = selections.filter(s => s.id !== selection.id);
+        this.setState({data: filteredSelections});
+    }
+
+    silDisabled() {
+        return this.state.currentSelections === undefined || this.state.currentSelections === null || this.state.currentSelections.length === 0;
+    }
+
     render() {
         return <YteForm>
             <YteFormElement>
                 <YtePanel>
+                    <YteButton styleType={"Primary"} onClick={this.ekleButtonClicked.bind(this)}> Ekle </YteButton>
+                    <YteButton styleType={"Primary"} onClick={this.silButtonClicked.bind(this)} disabled={this.silDisabled()}> Sil </YteButton>
                     <YteValidator target={this} >
                         {
                             ({error, hasError, handleChildErrorChange}) => {
                                 return (<div>
                                     <YteValidatableDataTable target={this} ref={this.myRef} value={this.state.data} handleChildErrorChange={handleChildErrorChange} autoLayout={true} selection={this.state.currentSelections} onSelectionChange={event => this.selection(event)}>
-                                        <YteColumn selectionMode="multiple" style={{width: '2em'}}/>
+                                        <YteColumn selectionMode="single" style={{width: '2em'}}/>
                                         <YteColumn header="alacak-kategorisi.ad" body={this.nameTemplate.bind(this)} />
                                         <YteColumn header="alacak-kategorisi.aciklama" body={this.aciklamaTemplate.bind(this)} />
                                         <YteColumn header="alacak-kategorisi.tahakkukSonradanEklenebilir" body={this.tahakkukSonradanEklenebilirTemplate.bind(this)} />
