@@ -11,6 +11,10 @@ import KalemTuruGuncelle from "./components/kalem-turu/KalemTuruGuncelle";
 import KalemTuruEkle from "./components/kalem-turu/KalemTuruEkle";
 import AlacakKategorisiGuncelle from "./components/alacak-kategorisi/AlacakKategorisiGuncelle";
 import FaizTipiGuncelle from "./components/faiz-tipi/FaizTipiGuncelle";
+import EtiketSorgula from "./components/etiket/EtiketSorgula";
+import EtiketEkle from "./components/etiket/EtiketEkle";
+import EtiketGoruntule from "./components/etiket/EtiketGoruntule";
+import EtiketGuncelle from "./components/etiket/EtiketGuncelle";
 
 const routes = [
     {path: "/", component: AnaSayfa},
@@ -50,10 +54,10 @@ const routes = [
     {
         path: "/etiket",
         moduleRoute:true,
-        queryComponent: TahakkukTuruSorgula,
-        addComponent: TahakkukTuruEkle,
-        viewComponent: TahakkukTuruGoruntule,
-        updateComponent: TahakkukTuruGuncelle
+        queryComponent: EtiketSorgula,
+        addComponent: EtiketEkle,
+        viewComponent: EtiketGoruntule,
+        updateComponent: EtiketGuncelle
     },
     {
         path: "/kurum-hesap-plani",

@@ -88,7 +88,13 @@ const tr = {
         "kalem-turu.odemeKartTipi": "Ödeme Kart Tipi",
         "kalem-turu.olusturulacakTahakkukKalemiTipi": "Oluşturulacak Tahakkuk Kalemi Tipi",
         "kalem-turu.faizEmaneteAlinsinMi": "Faiz Emanete Alınsın Mı",
-        "kalem-turu.kdvliMi": "KDV İşletilsin Mi"
+        "kalem-turu.kdvliMi": "KDV İşletilsin Mi",
+
+        "etiket.olusturulmaTarihi": "Oluşturulma Tarihi",
+        "etiket.ad" : "Ad",
+        "etiket.kamuIdaresi" : "Kamu Idaresi",
+        "etiket.baslik": "Etiket Sorgula"
+
     }
 }
 
