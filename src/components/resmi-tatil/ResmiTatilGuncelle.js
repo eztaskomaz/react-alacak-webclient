@@ -8,8 +8,7 @@ import {
     YteButton,
     YteValidator,
     YteValidatableComponent,
-    YteTextInput,
-    YteBooleanInput,
+    YteDateInput,
     handleTargetPathValueChange,
     handleRemoteCall
 } from "yte-react-core";
@@ -26,27 +25,15 @@ class AlacakKategorisiGuncelle extends Component {
         handleTargetPathValueChange({target: this, path: path, value: val});
     };
 
-    nameTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="ad" >
-            <YteTextInput value={rowData.ad} onChange={(val) => {this.handleTableValueChange("ad", column.rowIndex, val)}} />
+    baslangicTarihiTemplate (rowData, column){
+        return <YteValidatableComponent error={rowData.yteRowError} errorPath="baslangicTarihi" >
+            <YteDateInput value={rowData.baslangicTarihi} onChange={(val) => {this.handleTableValueChange("baslangicTarihi", column.rowIndex, val)}} />
         </YteValidatableComponent>;
     };
 
-    aciklamaTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="aciklama" >
-            <YteTextInput value={rowData.aciklama} onChange={(val) => {this.handleTableValueChange("aciklama", column.rowIndex, val)}} />
-        </YteValidatableComponent>;
-    };
-
-    tahakkukSonradanEklenebilirTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="tahakkukSonradanEklenebilir" >
-            <YteBooleanInput value={rowData.tahakkukSonradanEklenebilir} onChange={(val) => {this.handleTableValueChange("tahakkukSonradanEklenebilir", column.rowIndex, val)}} />
-        </YteValidatableComponent>;
-    };
-
-    tahakkukIptalEdilebilirTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="tahakkukIptalEdilebilir" >
-            <YteBooleanInput value={rowData.tahakkukIptalEdilebilir} onChange={(val) => {this.handleTableValueChange("tahakkukIptalEdilebilir", column.rowIndex, val)}} />
+    bitisTarihiTemplate (rowData, column){
+        return <YteValidatableComponent error={rowData.yteRowError} errorPath="bitisTarihi" >
+            {rowData.bitisTarihi !== null ? <YteDateInput value={rowData.bitisTarihi} onChange={(val) => {this.handleTableValueChange("bitisTarihi", column.rowIndex, val)}} /> : null}
         </YteValidatableComponent>;
     };
 
@@ -62,7 +49,7 @@ class AlacakKategorisiGuncelle extends Component {
     componentDidMount() {
         handleRemoteCall({
             method: "get",
-            targetUrl: "/alacakKategorisi/getirTumu",
+            targetUrl: "/resmiTatil/getirTumu",
             afterOperationSucceeded: (data) => {
                 this.setState({data: data});
             }
@@ -98,10 +85,8 @@ class AlacakKategorisiGuncelle extends Component {
                                 return (<div>
                                     <YteValidatableDataTable target={this} ref={this.myRef} value={this.state.data} handleChildErrorChange={handleChildErrorChange} autoLayout={true} selection={this.state.currentSelections} onSelectionChange={event => this.selection(event)}>
                                         <YteColumn selectionMode="single" style={{width: '2em'}}/>
-                                        <YteColumn header="alacak-kategorisi.ad" body={this.nameTemplate.bind(this)} />
-                                        <YteColumn header="alacak-kategorisi.aciklama" body={this.aciklamaTemplate.bind(this)} />
-                                        <YteColumn header="alacak-kategorisi.tahakkukSonradanEklenebilir" body={this.tahakkukSonradanEklenebilirTemplate.bind(this)} />
-                                        <YteColumn header="alacak-kategorisi.tahakkukIptalEdilebilir" body={this.tahakkukIptalEdilebilirTemplate.bind(this)} />
+                                        <YteColumn header="resmi-tatil.baslangicTarihi" body={this.baslangicTarihiTemplate.bind(this)} />
+                                        <YteColumn header="resmi-tatil.bitisTarihi" body={this.bitisTarihiTemplate.bind(this)} />
                                     </YteValidatableDataTable>
                                     <YteButton styleType={hasError ? "Danger" : "Success"} > Guncelle </YteButton>
                                 </div>);

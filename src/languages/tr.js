@@ -91,9 +91,16 @@ const tr = {
         "kalem-turu.kdvliMi": "KDV İşletilsin Mi",
 
         "etiket.olusturulmaTarihi": "Oluşturulma Tarihi",
-        "etiket.ad" : "Ad",
-        "etiket.kamuIdaresi" : "Kamu Idaresi",
-        "etiket.baslik": "Etiket Sorgula"
+        "etiket.ad": "Ad",
+        "etiket.kamuIdaresi": "Kamu Idaresi",
+        "etiket.baslik": "Etiket Sorgula",
+
+        "resmi-tatil.baslik": "Resmi Tatil",
+        "resmi-tatil.ekle": "Ekle",
+        "resmi-tatil.sil": "Sil",
+        "resmi-tatil.aciklama": "Not: Başlangıç ve bitiş tarihleri dahildir.",
+        "resmi-tatil.baslangicTarihi": "Başlangıç Tarihi",
+        "resmi-tatil.bitisTarihi": "Bitiş Tarihi"
 
     }
 }

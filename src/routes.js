@@ -15,6 +15,7 @@ import EtiketSorgula from "./components/etiket/EtiketSorgula";
 import EtiketEkle from "./components/etiket/EtiketEkle";
 import EtiketGoruntule from "./components/etiket/EtiketGoruntule";
 import EtiketGuncelle from "./components/etiket/EtiketGuncelle";
+import ResmiTatilGuncelle from "./components/resmi-tatil/ResmiTatilGuncelle";
 
 const routes = [
     {path: "/", component: AnaSayfa},
@@ -49,7 +50,7 @@ const routes = [
     {
         path: "/resmi-tatil",
         moduleRoute:true,
-        queryComponent: TahakkukTuruSorgula,
+        queryComponent: ResmiTatilGuncelle
     },
     {
         path: "/etiket",
