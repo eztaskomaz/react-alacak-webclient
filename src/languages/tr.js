@@ -1,4 +1,3 @@
-
 const tr = {
     "key": "tr",
     "dictionary": {
@@ -31,10 +30,18 @@ const tr = {
         "enum.OlusturulacakTahakkukKalemiTipi.HAZINE_YARDIMI_SERMAYE": "Hazine Yardımı Sermaye",
         "enum.EmanetDurumu.EMANETE_ALINIR": "Emanete Alınır",
         "enum.EmanetDurumu.EMANETE_ALINMAZ": "Emanete Alınmaz",
+        "enum.KurumHesapPlaniTipi.GENEL": "Genel Bütçe",
+        "enum.KurumHesapPlaniTipi.OZEL": "Özel Bütçe",
+        "enum.KurumHesapPlaniTipi.UNIVERSITE": "Üniversite",
+        "enum.KurumHesapPlaniTipi.DDK": "DDK",
+        "enum.KurumHesapPlaniTipi.DIGER": "Diğer",
+        "enum.KurumHesapPlaniTipi.DONER_SERMAYE": "Döner Sermaye",
+        "enum.KurumHesapPlaniTipi.FON": "Fon",
+        "enum.KurumHesapPlaniTipi.GENCLIK_VE_SPOR": "Gençlik ve Spor",
 
-        "alacak-kategorisi.baslik" : "Alacak Kategorisi",
-        "alacak-kategorisi.ekle" : "Ekle",
-        "alacak-kategorisi.sil" : "Sil",
+        "alacak-kategorisi.baslik": "Alacak Kategorisi",
+        "alacak-kategorisi.ekle": "Ekle",
+        "alacak-kategorisi.sil": "Sil",
         "alacak-kategorisi.ad": "Ad",
         "alacak-kategorisi.aciklama": "Açıklama",
         "alacak-kategorisi.tahakkukSonradanEklenebilir": "Tahakkuk Sonradan Eklenebilir",
@@ -69,6 +76,7 @@ const tr = {
         "kalem-turu.baskasiAdinaTakipMi": "Başkası Adına Takip Mi",
         "kalem-turu.surekliMi": "Sürekli Mi",
         "kalem-turu.kurumHesapPlaniTipi": "Kurum Hesap Planı Tipi",
+        "kalem-turu.kurumHesapPlani": "Kurum Hesap Planı",
         "kalem-turu.alacakKategorisi": "Alacak Kategorisi",
         "kalem-turu.indirimGirilsinMi": "İndirim Girilsin Mi",
         "kalem-turu.takipMi": "Takip Mi",

@@ -224,9 +224,11 @@ class KalemTuruSorgula extends Component {
             <YteColumn field="id" header="kalem-turu.id"/>
             <YteColumn field="ad" header="kalem-turu.ad"/>
             <YteColumn header="kalem-turu.emanetDurumu"
-                       body={(rowData) => (enumDisplay("EmanetDurumu", rowData.olusturulacakTahakkukTipi))}/>
+                       body={(rowData) => (enumDisplay("EmanetDurumu", rowData.emanetDurumu))}/>
+            <YteColumn header="kalem-turu.kurumHesapPlaniTipi"
+                       body={(rowData) => (enumDisplay("KurumHesapPlaniTipi", rowData.kurumHesapPlaniTipi))}/>
             <YteColumn header="kalem-turu.durum"
-                       body={(rowData) => (enumDisplay("Durum", rowData.olusturulacakTahakkukTipi))}/>
+                       body={(rowData) => (enumDisplay("Durum", rowData.durum))}/>
             <YteColumn header="kalem-turu.butceyeGelirMi"
                        body={(rowData) => (formatBoolean(rowData.butceyeGelirMi))}/>
             <YteColumn header="kalem-turu.baskasiAdinaTakipMi"
@@ -244,9 +246,9 @@ class KalemTuruSorgula extends Component {
             <YteColumn header="kalem-turu.butceyeGelirFaiziAtilsinMi"
                        body={(rowData) => (formatBoolean(rowData.butceyeGelirFaiziAtilsinMi))}/>
             <YteColumn header="kalem-turu.odemeKartTipi"
-                       body={(rowData) => (enumDisplay("OdemeKartTipi", rowData.olusturulacakTahakkukTipi))}/>
+                       body={(rowData) => (enumDisplay("OdemeKartTipi", rowData.odemeKartTipi))}/>
             <YteColumn header="kalem-turu.olusturulacakTahakkukKalemiTipi"
-                       body={(rowData) => (enumDisplay("OlusturulacakTahakkukKalemiTipi", rowData.olusturulacakTahakkukTipi))}/>
+                       body={(rowData) => (enumDisplay("OlusturulacakTahakkukKalemiTipi", rowData.olusturulacakTahakkukKalemiTipi))}/>
             <YteColumn header="kalem-turu.faizEmaneteAlinsinMi"
                        body={(rowData) => (formatBoolean(rowData.faizEmaneteAlinsinMi))}/>>
         </YteCriteriaAndQueryPanel>
