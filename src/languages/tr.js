@@ -38,6 +38,9 @@ const tr = {
         "enum.KurumHesapPlaniTipi.DONER_SERMAYE": "Döner Sermaye",
         "enum.KurumHesapPlaniTipi.FON": "Fon",
         "enum.KurumHesapPlaniTipi.GENCLIK_VE_SPOR": "Gençlik ve Spor",
+        "enum.ZamanaGoreFaizHesaplamaYontemi.AYLIK": "Aylık",
+        "enum.ZamanaGoreFaizHesaplamaYontemi.TAM_AYLIK": "Tam Aylık",
+        "enum.ZamanaGoreFaizHesaplamaYontemi.GUNLUK": "Günlük",
 
         "alacak-kategorisi.baslik": "Alacak Kategorisi",
         "alacak-kategorisi.ekle": "Ekle",
@@ -100,7 +103,19 @@ const tr = {
         "resmi-tatil.sil": "Sil",
         "resmi-tatil.aciklama": "Not: Başlangıç ve bitiş tarihleri dahildir.",
         "resmi-tatil.baslangicTarihi": "Başlangıç Tarihi",
-        "resmi-tatil.bitisTarihi": "Bitiş Tarihi"
+        "resmi-tatil.bitisTarihi": "Bitiş Tarihi",
+
+        "faiz-tipi.baslik": "Faiz Tipi",
+        "faiz-tipi.ekle": "Ekle",
+        "faiz-tipi.sil": "Sil",
+        "faiz-tipi.detay": "Detay",
+        "faiz-tipi.ad": "Ad",
+        "faiz-tipi.zamanaGoreFaizHesaplamaYontemi": "Faiz Hesaplama Yöntemi",
+        "faiz-tipi-detay.tarih": "Tarih",
+        "faiz-tipi-detay.faizOrani": "Faiz Oranı (%)",
+        "faiz-tipi-detay.paraBirimi": "Para Birimi",
+        "faiz-tipi-detay.ekle": "Ekle",
+        "faiz-tipi-detay.sil": "Sil"
 
     }
 }

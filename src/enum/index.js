@@ -5,6 +5,7 @@ import {default as EmanetDurumu} from './EmanetDurumu';
 import {default as OlusturulacakTahakkukKalemiTipi} from './OlusturulacakTahakkukKalemiTipi';
 import {default as OdemeKartTipi} from './OdemeKartTipi';
 import {default as KurumHesapPlaniTipi} from './KurumHesapPlaniTipi';
+import {default as ZamanaGoreFaizHesaplamaYontemi} from './ZamanaGoreFaizHesaplamaYontemi';
 
 const CUSTOM_ENUMS = {
     "EnumCategories": EnumCategories,
@@ -13,7 +14,8 @@ const CUSTOM_ENUMS = {
     "EmanetDurumu": EmanetDurumu,
     "OlusturulacakTahakkukKalemiTipi": OlusturulacakTahakkukKalemiTipi,
     "OdemeKartTipi": OdemeKartTipi,
-    "KurumHesapPlaniTipi": KurumHesapPlaniTipi
+    "KurumHesapPlaniTipi": KurumHesapPlaniTipi,
+    "ZamanaGoreFaizHesaplamaYontemi": ZamanaGoreFaizHesaplamaYontemi
 }
 
 export default CUSTOM_ENUMS;

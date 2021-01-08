@@ -9,16 +9,18 @@ import {
     YteValidator,
     YteValidatableComponent,
     YteTextInput,
-    YteBooleanInput,
     handleTargetPathValueChange,
-    handleRemoteCall
+    YteNumberInput,
+    handleRemoteCall, YteEnumInput
 } from "yte-react-core";
 
-class AlacakKategorisiGuncelle extends Component {
+class FaizTipiGuncelle extends Component {
 
     state = {
         data:  [],
-        currentSelections:[]
+        currentSelections:[],
+        faizTipiOranlari: [],
+        detayGoster: false
     };
 
     handleTableValueChange (key, rowIndex, val){
@@ -26,28 +28,26 @@ class AlacakKategorisiGuncelle extends Component {
         handleTargetPathValueChange({target: this, path: path, value: val});
     };
 
-    nameTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="name" >
+    adTemplate (rowData, column){
+        return <YteValidatableComponent error={rowData.yteRowError} errorPath="ad" >
             <YteTextInput value={rowData.ad} onChange={(val) => {this.handleTableValueChange("ad", column.rowIndex, val)}} />
         </YteValidatableComponent>;
     };
 
-    aciklamaTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="aciklama" >
-            <YteTextInput value={rowData.aciklama} onChange={(val) => {this.handleTableValueChange("aciklama", column.rowIndex, val)}} />
+    zamanaGoreFaizHesaplamaYontemiTemplate (rowData, column){
+        return <YteValidatableComponent error={rowData.yteRowError} errorPath="zamanaGoreFaizHesaplamaYontemi" >
+            <YteEnumInput enumName="ZamanaGoreFaizHesaplamaYontemi" value={rowData.zamanaGoreFaizHesaplamaYontemi} onChange={newValue => this.handleTableValueChange("zamanaGoreFaizHesaplamaYontemi", column.rowIndex, newValue)}/>
         </YteValidatableComponent>;
     };
 
-    tahakkukSonradanEklenebilirTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="tahakkukSonradanEklenebilir" >
-            <YteBooleanInput value={rowData.tahakkukSonradanEklenebilir} onChange={(val) => {this.handleTableValueChange("tahakkukSonradanEklenebilir", column.rowIndex, val)}} />
+    faizOraniTemplate (rowData, column){
+        return <YteValidatableComponent error={rowData.yteRowError} errorPath="faizOrani" >
+            <YteNumberInput value={rowData.faizOrani} onChange={(val) => {console.log(val); console.log(column.rowIndex); this.handleTableValueChange("faizOrani", column.rowIndex, val)}} />
         </YteValidatableComponent>;
     };
 
-    tahakkukIptalEdilebilirTemplate (rowData, column){
-        return <YteValidatableComponent error={rowData.yteRowError} errorPath="tahakkukIptalEdilebilir" >
-            <YteBooleanInput value={rowData.tahakkukIptalEdilebilir} onChange={(val) => {this.handleTableValueChange("tahakkukIptalEdilebilir", column.rowIndex, val)}} />
-        </YteValidatableComponent>;
+    detayButtonTemplate (rowData, column){
+        return  <YteButton styleType={"Primary"} onClick={()=> this.detayButtonClicked(rowData, column)}> Detay </YteButton>
     };
 
     selection(event){
@@ -62,37 +62,67 @@ class AlacakKategorisiGuncelle extends Component {
     componentDidMount() {
         handleRemoteCall({
             method: "get",
-            targetUrl: "/alacakKategorisi/getirTumu",
+            targetUrl: "/faizTipi/getirTumu",
             afterOperationSucceeded: (data) => {
                 this.setState({data: data});
             }
         });
     }
 
+    ekleButtonClicked () {
+        const selections = [...this.state.data];
+        selections.push({});
+        this.setState({data: selections});
+    }
+
+    detayButtonClicked (rowData, column) {
+        console.log(rowData.faizTipiOranlari);
+        if(this.state.detayGoster === false) {
+            this.setState({detayGoster: true, faizTipiOranlari: rowData.faizTipiOranlari});
+        } else {
+            this.setState({detayGoster: false});
+        }
+    }
+
+    silButtonClicked () {
+        const selection = {...this.state.currentSelections[0]}
+        const selections = [...this.state.data];
+        const filteredSelections = selections.filter(s => s.id !== selection.id);
+        this.setState({data: filteredSelections});
+    }
+
+    silDisabled() {
+        return this.state.currentSelections === undefined || this.state.currentSelections === null || this.state.currentSelections.length === 0;
+    }
+
     render() {
         return <YteForm>
             <YteFormElement>
                 <YtePanel>
-                    <YteValidator target={this} >
-                        {
+                    <YteButton styleType={"Primary"} onClick={this.ekleButtonClicked.bind(this)}> Ekle </YteButton>
+                    <YteButton styleType={"Primary"} onClick={this.silButtonClicked.bind(this)} disabled={this.silDisabled()}> Sil </YteButton>
+                    <YteValidator target={this} >{
                             ({error, hasError, handleChildErrorChange}) => {
                                 return (<div>
                                     <YteValidatableDataTable target={this} ref={this.myRef} value={this.state.data} handleChildErrorChange={handleChildErrorChange} autoLayout={true} selection={this.state.currentSelections} onSelectionChange={event => this.selection(event)}>
                                         <YteColumn selectionMode="multiple" style={{width: '2em'}}/>
-                                        <YteColumn header="alacak-kategorisi.ad" body={this.nameTemplate.bind(this)} />
-                                        <YteColumn header="alacak-kategorisi.aciklama" body={this.aciklamaTemplate.bind(this)} />
-                                        <YteColumn header="alacak-kategorisi.tahakkukSonradanEklenebilir" body={this.tahakkukSonradanEklenebilirTemplate.bind(this)} />
-                                        <YteColumn header="alacak-kategorisi.tahakkukIptalEdilebilir" body={this.tahakkukIptalEdilebilirTemplate.bind(this)} />
+                                        <YteColumn header="faiz-tipi.ad" body={this.adTemplate.bind(this)} />
+                                        <YteColumn header="faiz-tipi.zamanaGoreFaizHesaplamaYontemi" body={this.zamanaGoreFaizHesaplamaYontemiTemplate.bind(this)} />
+                                        <YteColumn header="faiz-tipi.detay" body={this.detayButtonTemplate.bind(this)} />
                                     </YteValidatableDataTable>
+                                    {this.state.detayGoster === true ?
+                                    <YteValidatableDataTable target={this} ref={this.myRef} value={this.state.faizTipiOranlari} handleChildErrorChange={handleChildErrorChange} autoLayout={true} selection={this.state.currentSelections} onSelectionChange={event => this.selection(event)}>
+                                        <YteColumn selectionMode="multiple" style={{width: '2em'}}/>
+                                        <YteColumn header="faiz-tipi-detay.faizOrani" body={this.faizOraniTemplate.bind(this)} />
+                                    </YteValidatableDataTable> : null }
                                     <YteButton styleType={hasError ? "Danger" : "Success"} > Guncelle </YteButton>
                                 </div>);
                             }
-                        }
-                    </YteValidator>
+                        }</YteValidator>
                 </YtePanel>
             </YteFormElement>
         </YteForm>
     }
 }
 
-export default AlacakKategorisiGuncelle;
+export default FaizTipiGuncelle;
